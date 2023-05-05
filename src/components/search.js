@@ -1,6 +1,6 @@
 
 import styled from 'styled-components'
-import InputText from './input-text'
+import SearchForm from './search-form'
 
 const SearchStyled = styled.div`
     grid-area: search;
@@ -11,11 +11,7 @@ const SearchStyled = styled.div`
 function Search() {
     return (
         <SearchStyled>
-            <h1>Character</h1>
-            <InputText />
-            <button>
-                Search
-            </button>
+            <SearchForm />
         </SearchStyled>
     )
 }

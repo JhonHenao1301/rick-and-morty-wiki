@@ -5,15 +5,18 @@ import styled from 'styled-components'
 const InputText = styled.input`
     border: 2px solid var(--primary);
     background: var(--bg);
-    inline-size: 10rem;
     padding-inline: 1rem;
     padding-block: .5rem;
-    font: var(--body2-regular);
+    inline-size: 20rem;
     border-radius: .5rem;
-    color: var(--white);
-    flex: 1;
+    box-shadow: rgba(0, 0, 0, 0.25) 1px 3px 9px;
+    color: var(--grey-30);
+    font: var(--body2-regular);
+    &:hover {
+        border: 3px solid var(--primary);
+    }
+
     @media screen and (max-width: 600px){
-        flex: 0;
     }
 `
 

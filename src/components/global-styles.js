@@ -12,9 +12,9 @@ const GlobalStylesStyled = createGlobalStyle`
     --bs-success: #198754;
     --bs-danger: #dc3545;
     --headline1: 600 1.625rem/2rem Inter;
-    --headline2-semi-bold: 600 1.75rem/1.5rem Inter;
+    --headline2-bold: 600 1.5rem/1.5rem Inter;
     --headline2-light: 300 1.5rem/1.5rem Inter;
-    --button: 500 0.875rem/1.5rem Inter;
+    --button: 400 1.25rem/1.5rem Inter;
     --body-regular: 400 1rem/1.5rem Inter;
     --body-semi-bold: 700 1rem/1.5rem Inter;
     --body2-regular: 400 0.875rem/1.5rem Inter;
