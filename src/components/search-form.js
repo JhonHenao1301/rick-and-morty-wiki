@@ -15,18 +15,11 @@ const SearchFormStyled = styled.form`
         gap: 2rem;
         justify-content: center;
     }
-    button {
-        background: var(--primary);
-        font: var(--button);
+    .btn {
         color: var(--white);
-        border-radius: 0.5rem;
         padding-inline: 1rem;
-        padding-block: .25rem;
-        min-inline-size: 5rem;
+        min-inline-size: 6rem;
         border: none;
-        &:hover {
-            cursor: pointer;
-        }
     }
 `
 
@@ -38,7 +31,7 @@ function SearchForm() {
                 <InputText 
                     placeholder='Search for characters'
                 />
-                <button>
+                <button type='button' className='btn btn-primary'>
                     Search
                 </button>
             </div>

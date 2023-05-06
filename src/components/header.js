@@ -6,7 +6,11 @@ const HeaderStyled = styled.header`
     background: var(--grey-10);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-inline: 8rem;
+    block-size: 4rem;
+    position: sticky;
+    top: 0;
     h1 {
         font: var(--headline1);
     }

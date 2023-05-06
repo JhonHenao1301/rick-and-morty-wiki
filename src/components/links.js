@@ -3,21 +3,29 @@
 import styled from 'styled-components'
 
 const LinksStyled = styled.nav`
+    border: 1px solid red;
     display: flex;
+    
     .link-list {
         display: inherit;
         gap: 1.5rem;
-        flex: 1;
+        align-items: center;
+        padding-inline: 0;
+        padding-block: 1rem;
+        margin: 0;
     }
     .link-list > li {
         display: inherit;
-        align-items: center;
         list-style: none;
+       
     }
     .link-list > li > a {
         font: var(--headline2-light);
         color: var(--grey-30);
         text-decoration: none;
+        display: flex;
+        align-items: center;
+    justify-content: center;
         &:hover {
             color: var(--black);
         }

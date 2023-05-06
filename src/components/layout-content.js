@@ -11,6 +11,7 @@ const LayoutContentStyled = styled.main`
         grid-template-columns: 278px 1fr 1fr;
         grid-template-rows: auto 1fr;
         column-gap: 2rem;
+        row-gap: 1rem;
     }
 `
 
