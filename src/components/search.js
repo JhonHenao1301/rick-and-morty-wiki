@@ -8,10 +8,10 @@ const SearchStyled = styled.div`
     text-align: center;
 `
 
-function Search() {
+function Search({setSearch}) {
     return (
         <SearchStyled>
-            <SearchForm />
+            <SearchForm setSearch={setSearch} />
         </SearchStyled>
     )
 }

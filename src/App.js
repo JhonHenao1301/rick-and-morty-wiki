@@ -14,13 +14,12 @@ function App() {
   const [fetchedData, updateFetchedData] = useState([]);
   const { info, results } = fetchedData;
   const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
-  // const api = `https://rickandmortyapi.com/api`
+  // const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
 
   useEffect(() => {
     (async function() {
       let data = await fetch(api).then((res) => res.json());
       updateFetchedData(data)
-      console.log(data)
     })();
   }, [api]);
   

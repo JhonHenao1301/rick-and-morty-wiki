@@ -15,6 +15,7 @@ const CardListStyled = styled.div`
 function CardList({ results, search }) {
     //I already know RESULTS is an Array
     if(results.length === 0) return <p>No characters found</p>
+    // console.log(results)
 
     // if (language !== "" && language !== 'all') {
     //     list = list.filter((item) => {
@@ -28,10 +29,6 @@ function CardList({ results, search }) {
             return item.name.search(search) >= 0
         })
     }
-
-    // if(list.length === 0) {
-    //     return <p>There are not repositories</p>
-    // }
     return (
         <CardListStyled>
             {
