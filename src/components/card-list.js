@@ -14,8 +14,8 @@ const CardListStyled = styled.div`
 
 function CardList({ results, search }) {
     //I already know RESULTS is an Array
-    if(results.length === 0) return <p>No characters found</p>
-    // console.log(results)
+    let list = results
+    if(!list) return <p>No characters found</p>
 
     // if (language !== "" && language !== 'all') {
     //     list = list.filter((item) => {
@@ -25,14 +25,14 @@ function CardList({ results, search }) {
     //     })
     // }
     if(search !== '') {
-        results = results.filter((item) => {
-            return item.name.search(search) >= 0
+        list = list.filter((item) => {
+            return item.name.toLowerCase().search(search) >= 0
         })
     }
     return (
         <CardListStyled>
             {
-                results.map((item) => {
+                list.map((item) => {
                     return <Card {...item} key={item.id} />
                 })
             }

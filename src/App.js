@@ -27,7 +27,7 @@ function App() {
     <Layout>
       <Header />
       <LayoutContent>
-        <Search setSearch={setSearch} />
+        <Search setSearch={setSearch} setPageNumber={setPageNumber} />
         <Filters />
         <CardList results={results} search={search}/>
       </LayoutContent>

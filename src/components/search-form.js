@@ -23,9 +23,13 @@ const SearchFormStyled = styled.form`
     }
 `
 
-function SearchForm({ setSearch }) {
-    function handleChange(event) {
+function SearchForm({ setSearch,setPageNumber }) {
+    function handleInputChange(event) {
+        setPageNumber(1)
         setSearch(event.target.value)
+    }
+    function handleButtonChange(event) {
+        event.preventDefault()
     }
     return (
         <SearchFormStyled>
@@ -33,9 +37,13 @@ function SearchForm({ setSearch }) {
             <div className="input-button">
                 <InputText 
                     placeholder='Search for characters'
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                 />
-                <button type='button' className='btn btn-primary'>
+                <button 
+                    type='button' 
+                    className='btn btn-primary'
+                    onClick={handleButtonChange}
+                >
                     Search
                 </button>
             </div>
