@@ -4,12 +4,16 @@ import Card from './card'
 
 const CardListStyled = styled.div`
     grid-area: item-list;
-    border: 1px solid red;
-    padding-block: 1rem;
+    /* border: 1px solid red; */
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 1rem;
     row-gap: 1.5rem;
+
+    @media screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 240px));
+    }
 `
 
 function CardList({ results, search }) {

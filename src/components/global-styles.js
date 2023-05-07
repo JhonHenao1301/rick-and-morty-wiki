@@ -5,8 +5,8 @@ const GlobalStylesStyled = createGlobalStyle`
     :root {
     --primary: #0d6efd;
     --black: #141414;
-    --white: #fffeee;
-    --grey-10: #F7F6EB;
+    --white: #fffffe;
+    --grey-10: #f8f9fa;
     --grey-20: #B6B5B0;
     --grey-30: #6C6B67;
     --bs-success: #198754;

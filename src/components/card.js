@@ -2,6 +2,8 @@
 import styled from 'styled-components'
 
 const CardStyled = styled.div`
+    border: 2px solid var(--primary);
+    border-radius: .5rem;
     .card-img-top {
         position: relative;
         block-size: auto;
