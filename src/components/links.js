@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const LinksStyled = styled.nav`
     border: 1px solid red;
     display: flex;
+    box-sizing: border-box;
     
     .link-list {
         display: inherit;

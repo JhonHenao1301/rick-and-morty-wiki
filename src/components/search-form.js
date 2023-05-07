@@ -6,9 +6,8 @@ const SearchFormStyled = styled.form`
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    h1 {
-        font-size: 2.5rem;
-        font-weight: 500;
+    h2 {
+        font: var(--headline2-bold);
     }
     .input-button {
         display: inherit;
@@ -33,7 +32,7 @@ function SearchForm({ setSearch,setPageNumber }) {
     }
     return (
         <SearchFormStyled>
-            <h1>Character</h1>
+            <h2>Character</h2>
             <div className="input-button">
                 <InputText 
                     placeholder='Search for characters'

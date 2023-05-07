@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 
 const LayoutContentStyled = styled.main`
-    padding-inline: 4rem;
+    padding-inline: 2rem;
     padding-block: 2rem;
     display: flex;
     flex-direction: column;
