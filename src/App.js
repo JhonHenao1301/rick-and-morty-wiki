@@ -13,23 +13,29 @@ function App() {
   const [search, setSearch] = useState('')
   const [fetchedData, updateFetchedData] = useState([]);
   const { info, results } = fetchedData;
-  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
+  const [status, setStatus] = useState('')
+  const [gender, setGender] = useState('')
+  const [species, setSpecies] = useState('')
+  // const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
+  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&species=${species}&gender=${gender}`
   // const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
 
   useEffect(() => {
     (async function() {
       let data = await fetch(api).then((res) => res.json());
       updateFetchedData(data)
+      // console.log(data)
     })();
   }, [api]);
+
   
   return (
     <Layout>
       <Header />
       <LayoutContent>
         <Search setSearch={setSearch} setPageNumber={setPageNumber} />
-        <Filters />
-        <CardList results={results} search={search}/>
+        <Filters setStatus={setStatus} setSpecies={setSpecies} setGender={setGender}/>
+        <CardList results={results} search={search} status={status} species={species} gender={gender} />
       </LayoutContent>
     </Layout>
   )
