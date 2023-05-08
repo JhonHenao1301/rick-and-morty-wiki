@@ -4,7 +4,9 @@ import Selector from './selector'
 
 const FiltersStyled = styled.div`
     border: 1px solid red;
-    .card-body {
+    .filter-clear {
+        display: flex;
+        justify-content: center;
     }
 `
 
@@ -16,7 +18,9 @@ function Filters({ setStatus, setSpecies, setGender }) {
     }
     return (
         <FiltersStyled>
-            <button type="button" className="btn btn-light" onClick={handleClick}>Clear filters</button>
+            <div className="filter-clear">
+                <button type="button" className="btn btn-primary btn-clear mb-3" onClick={handleClick}>Clear filters</button>
+            </div>
             <div id="accordion">
                 <div className="card">
                     <div className="card-header" id="headingOne">
