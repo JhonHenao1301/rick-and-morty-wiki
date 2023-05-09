@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Card from './card'
 
 const CardListStyled = styled.div`
-    /* border: 1px solid red; */
+    border: 1px solid red;
     grid-area: item-list;
     display: grid;
     grid-template-columns: repeat(2, 1fr);

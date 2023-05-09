@@ -3,9 +3,11 @@ import styled from 'styled-components'
 import { NavLink, Link } from 'react-router-dom'
 
 const NavbarStyled = styled.nav`
-    /* #myNavbar {
-        display: block;
-    } */
+    .active {
+        border-bottom: 3px solid var(--primary);
+        color: var(--primary) !important;
+        font-weight: 700;
+    }
 `
 
 function Navbar() {
@@ -15,13 +17,12 @@ function Navbar() {
                 <Link to="/" className="navbar-brand fs-3 ubuntu">
                 Rick & Morty <span className="text-primary">WiKi</span>
                 </Link>
-                <button className="navbar-toggler border-0" type="button"
-                data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="fas fa-bars open text-dark"></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="myNavbar">
                     <div className="navbar-nav fs-5">
-                        <NavLink to="/" className="nav-link">
+                        <NavLink activeclassname="active" to="/" className="nav-link">
                         Characters
                         </NavLink>
                         <NavLink to="/episodes" className="nav-link">

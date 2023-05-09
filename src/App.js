@@ -47,7 +47,7 @@ const Home = () => {
     })();
   }, [api]);
 
-  
+  // console.log(results)
   return (
     <Layout>
       <LayoutContent>
