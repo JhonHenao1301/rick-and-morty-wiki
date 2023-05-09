@@ -20,7 +20,7 @@ function Pagination({ setPageNumber, info }) {
                 pageLinkClassName='page-link' 
                 activeClassName='active'
                 onPageChange={(data) => setPageNumber(data.selected + 1)}
-                pageCount={info?.pages}
+                pageCount={Math.ceil(info?.pages)}
             />
         </PaginationStyled>
     )

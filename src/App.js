@@ -6,9 +6,30 @@ import Search from './components/search';
 import Filters from './components/filters';
 import CardList from './components/card-list';
 import Pagination from './components/pagination';
+// import Navbar from './components/navbar';
 import { useState, useEffect } from 'react';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Episodes from './Pages/Episodes';
+import Location from './Pages/Location';
+
 function App() {
+  return(
+    <Router>
+      <div className="App">
+        <Header />
+      </div>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/episodes" element={<Episodes />} />
+        <Route path="/location" element={<Location />} />
+      </Routes>
+    </Router>
+  )
+}
+
+const Home = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [search, setSearch] = useState('')
   const [fetchedData, updateFetchedData] = useState([]);
@@ -17,7 +38,6 @@ function App() {
   const [gender, setGender] = useState('')
   const [species, setSpecies] = useState('')
   const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&species=${species}&gender=${gender}`
-  // const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
 
   useEffect(() => {
     (async function() {
@@ -30,7 +50,6 @@ function App() {
   
   return (
     <Layout>
-      <Header />
       <LayoutContent>
         <Search setSearch={setSearch} setPageNumber={setPageNumber} />
         <Filters setStatus={setStatus} setSpecies={setSpecies} setGender={setGender}/>

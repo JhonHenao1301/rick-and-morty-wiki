@@ -15,6 +15,7 @@ function Filters({ setStatus, setSpecies, setGender }) {
         setStatus('')
         setSpecies('')
         setGender('')
+        window.location.reload(false)
     }
     return (
         <FiltersStyled>
