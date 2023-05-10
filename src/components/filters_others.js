@@ -4,7 +4,6 @@ import Selector from './selector'
 
 const FiltersOthersStyled = styled.div`
     grid-area: filters;
-    border: 1px solid red;
 `
 
 function FiltersOthers({setId, total, module}) {

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Selector from './selector'
 
 const FiltersStyled = styled.div`
-    border: 1px solid red;
+    /* border: 1px solid red; */
     .filter-clear {
         display: flex;
         justify-content: center;

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Card from './card'
 
 const CardListStyled = styled.div`
-    border: 1px solid red;
+    /* border: 1px solid red; */
     grid-area: item-list;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -17,9 +17,10 @@ const CardListStyled = styled.div`
 `
 
 function CardList({ results, search, status, species, gender }) {
+
     //I already know RESULTS is an Array
     let list = results
-    if(!list) return <p>No characters found</p>
+    if(!list || list.length === 0) return <div className='alert alert-primary m-4' role='alert'>No characters found</div>
     
     // Function to filter by Status
     if (status !== "") {
@@ -64,6 +65,7 @@ function CardList({ results, search, status, species, gender }) {
                 list.map((item) => {
                     return <Card {...item} key={item.id} />
                 })
+
             }
         </CardListStyled>
     )

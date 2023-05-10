@@ -6,7 +6,7 @@ import Search from './components/search';
 import Filters from './components/filters';
 import CardList from './components/card-list';
 import Pagination from './components/pagination';
-// import Navbar from './components/navbar';
+import Loader from './components/loader';
 import { useState, useEffect } from 'react';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -37,13 +37,18 @@ const Home = () => {
   const [status, setStatus] = useState('')
   const [gender, setGender] = useState('')
   const [species, setSpecies] = useState('')
+  const [loading, setLoading] = useState(false)
+
   const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&species=${species}&gender=${gender}`
 
   useEffect(() => {
     (async function() {
+      setLoading(true)
       let data = await fetch(api).then((res) => res.json());
       updateFetchedData(data)
+      setLoading(false)
       // console.log(data)
+
     })();
   }, [api]);
 
@@ -53,6 +58,7 @@ const Home = () => {
       <LayoutContent>
         <Search setSearch={setSearch} setPageNumber={setPageNumber} />
         <Filters setStatus={setStatus} setSpecies={setSpecies} setGender={setGender}/>
+        {loading && <Loader />}
         <CardList results={results} search={search} status={status} species={species} gender={gender} />
       </LayoutContent>
       <Pagination setPageNumber={setPageNumber} info={info}/>

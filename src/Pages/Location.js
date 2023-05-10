@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import LayoutContent from '../components/layout-content'
 import FiltersOthers from '../components/filters_others'
 import CardList from '../components/card-list'
+import Loader from '../components/loader'
 import { useState, useEffect } from 'react'
 
 const LocationStyled = styled.div`
@@ -23,21 +24,28 @@ function Location() {
     const [id, setId] = useState(1);
     const [data, updateFetchedData] = useState([]);
     const [results, setResults] = useState([]);
-    const { count, name, type, dimension } = data;
+    const { name, type, dimension } = data;
+    const [loading, setLoading] = useState(false)
     let api = `https://rickandmortyapi.com/api/location/${id}`
 
     useEffect(() => {
         (async function() {
-          let data = await fetch(api).then((res) => res.json())
-          updateFetchedData(data)
+            setLoading(true)
+            let data = await fetch(api).then((res) => res.json())
+            updateFetchedData(data)
+            setLoading(false)
         
-          let characters_data = await Promise.all(
-            data.residents.map((item) => {
-                return fetch(item).then((res) => res.json());
-            })
-          )
-          setResults(characters_data)
-        //   console.log(data.residents)
+            setLoading(true)
+            let characters_data = await Promise.all(
+                // (!data.residents) ? setError(true) :
+                // setError(false)
+                data.residents.map((item) => {
+                    return fetch(item).then((res) => res.json());
+                })
+            )
+            setResults(characters_data)
+              console.log(data.residents)
+            setLoading(false)
         })();
     }, [api]);
     return (
@@ -52,6 +60,7 @@ function Location() {
                         <p>Type: {type}</p>
                     </div>
                     <FiltersOthers total={126} setId={setId} module='Location' />
+                    {loading && <Loader />}
                     <CardList results={results} search='' status='' species='' gender=''/>
                 </LayoutContent>
             </Layout>
