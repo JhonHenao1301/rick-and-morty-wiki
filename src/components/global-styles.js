@@ -25,6 +25,7 @@ const GlobalStylesStyled = createGlobalStyle`
     color: var(--black);
     font: var(--body-regular);
     margin: 0;
+    min-inline-size: 100%;
   }
 
   h1 {

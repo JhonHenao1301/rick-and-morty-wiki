@@ -9,14 +9,16 @@ const LayoutContentStyled = styled.main`
     gap: 2rem;
 
 
-    @media screen and (min-width: 768px) {
-        padding-inline: 8rem;
+    @media screen and (min-width: 762px) {
+        padding-inline: 4rem;
         display: grid;
         grid-template-areas: "search search search" "filters item-list item-list";
         grid-template-columns: 278px 1fr 1fr;
         grid-template-rows: auto 1fr;
-        column-gap: 2rem;
-        row-gap: 1rem;
+    }
+
+    @media screen and (min-width: 1048px) {
+        padding-inline: 6rem;
     }
 `
 

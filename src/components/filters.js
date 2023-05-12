@@ -8,6 +8,9 @@ const FiltersStyled = styled.div`
         display: flex;
         justify-content: center;
     }
+    .btn-link {
+        text-decoration: none;
+    }
 `
 
 function Filters({ setStatus, setSpecies, setGender }) {
@@ -24,7 +27,7 @@ function Filters({ setStatus, setSpecies, setGender }) {
             </div>
             <div id="accordion">
                 <div className="card">
-                    <div className="card-header" id="headingOne">
+                    <div className="card-header px-0" id="headingOne">
                         <h5 className="mb-0">
                             <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Status
@@ -39,7 +42,7 @@ function Filters({ setStatus, setSpecies, setGender }) {
                     </Selector>
                 </div>
                 <div className="card">
-                    <div className="card-header" id="headingTwo">
+                    <div className="card-header px-0" id="headingTwo">
                         <h5 className="mb-0">
                             <button className="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Species
@@ -58,7 +61,7 @@ function Filters({ setStatus, setSpecies, setGender }) {
                     </Selector>
                 </div>
                 <div className="card">
-                    <div className="card-header" id="headingThree">
+                    <div className="card-header px-0" id="headingThree">
                         <h5 className="mb-0">
                             <button className="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             Gender

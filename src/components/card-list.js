@@ -10,6 +10,12 @@ const CardListStyled = styled.div`
     column-gap: 1rem;
     row-gap: 1.5rem;
 
+    .alert {
+      display: flex;
+      box-sizing: border-box;
+      block-size: 2rem;
+    }
+
     @media screen and (min-width: 768px) {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 240px));

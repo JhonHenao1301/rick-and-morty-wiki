@@ -44,7 +44,7 @@ function Location() {
                 })
             )
             setResults(characters_data)
-              console.log(data.residents)
+            //   console.log(data.residents)
             setLoading(false)
         })();
     }, [api]);
